@@ -13,7 +13,7 @@ const API_KEY = process.env.PUBLIC_API_KEY;
 app.use(express.static("public/"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const getAllSuporttedCurrencies = async (req, res, next) => {
+const getAllSuporttedCurrencies = async () => {
   let supportedCurrencies = [];
   try {
     const result = await axios.get(`${BASE_API_URL}/list`, {
