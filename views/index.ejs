@@ -15,13 +15,13 @@
         <label for="base_amt">From</label>
         <div class="row">
           <select name="base_currency" id="base_currency">
-            <option value="select a currency">Select currency</option>
+            <option value="select a currency">Select a currency</option>
             <% supportedCurrencies.forEach((currency) => { %>
               <option value="<%= currency.code %>"><%= currency.label %></option>
             <% }) %>
           </select>
           <div class="vertical-line"></div>
-          <input type="number" name="amt" id="amt" placeholder="1">
+          <input type="number" name="amt" id="amt" placeholder="Enter amount">
         </div>
       </div>
 
@@ -29,13 +29,13 @@
         <label for="target_amt">To</label>
         <div class="row">
           <select name="target_currency" id="target_currency">
-            <option value="select a currency">Select currency</option>
+            <option value="select a currency">Select a currency</option>
             <% supportedCurrencies.forEach((currency) => { %>
               <option value="<%= currency.code %>"><%= currency.label %></option>
             <% }) %>
           </select>
           <div class="vertical-line"></div>
-          <input type="number" name="target_amt" id="target_amt" placeholder="1" value="1" disabled>
+          <input type="text" name="target_amt" id="target_amt" placeholder="Result will show here" disabled>
         </div>
       </div>
     </form>
