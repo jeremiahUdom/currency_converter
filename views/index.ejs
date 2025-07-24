@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/style.css">
+  <title>Currency Converter</title>
+</head>
+<body>
+  <main>
+    <h1>Currency Converter</h1>
+
+    <form>
+      <div>
+        <label for="base_amt">From</label>
+        <div class="row">
+          <select name="base_currency" id="base_currency">
+            <option value="select a currency">Select currency</option>
+            <% supportedCurrencies.forEach((currency) => { %>
+              <option value="<%= currency.code %>"><%= currency.label %></option>
+            <% }) %>
+          </select>
+          <div class="vertical-line"></div>
+          <input type="number" name="amt" id="amt" placeholder="1">
+        </div>
+      </div>
+
+      <div>
+        <label for="target_amt">To</label>
+        <div class="row">
+          <select name="target_currency" id="target_currency">
+            <option value="select a currency">Select currency</option>
+            <% supportedCurrencies.forEach((currency) => { %>
+              <option value="<%= currency.code %>"><%= currency.label %></option>
+            <% }) %>
+          </select>
+          <div class="vertical-line"></div>
+          <input type="number" name="target_amt" id="target_amt" placeholder="1" value="1" disabled>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="app/app.js" type="module"></script>
+</body>
+</html>
